@@ -64,26 +64,34 @@ public class TriggerDetector : MonoBehaviour {
     //checks if a note is inside the beat trigger
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Finish"))
+        { 
         print("onBeat");
         onBeat = true;
         current = other.gameObject;
-
+        }
     }
 
     //checks if a note has left the beat trigger and destroys the note
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(InputCheck()) {
-            alreadyMissed = false;
+        if (other.CompareTag("Finish"))
+        {
+            if (InputCheck())
+            {
+                alreadyMissed = false;
+                onBeat = false;
+                return;
+            }
+            else if (alreadyMissed == false)
+            {
+                Missed();
+            }
             onBeat = false;
-            return;
-        } else if (alreadyMissed == false) {
-            Missed();   
-        }
-        onBeat = false;
-        alreadyMissed = false;
+            alreadyMissed = false;
 
-        Destroy(other.gameObject, 0.1f);
+            Destroy(other.gameObject, 0.1f);
+        }
     }
 
     //General cover all input checks in case they are wrong
