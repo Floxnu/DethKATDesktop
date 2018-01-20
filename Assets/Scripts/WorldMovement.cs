@@ -89,10 +89,7 @@ public class WorldMovement : MonoBehaviour {
             endPosition = new Vector3(transform.position.x - 3, transform.position.y - 3, 0);
             moveTween = transform.DOMove(endPosition, .1f);
         }
-        else if (ScoreManager.instance.goingDown == true)
-        {
-
-        }
+        
     }
     
     
