@@ -33,6 +33,14 @@ public class TriggerDetector : MonoBehaviour {
 
     public bool optionalSuccess = false;
 
+    public SpriteRenderer SuccessMask;
+    public SpriteRenderer FailMask;
+
+    private Color maskColor = Color.white;
+
+    private bool HasFailureMask;
+    private bool HasSuccessMask;
+
     //starts the song and beats corutines
     private void Start()
     {
@@ -41,6 +49,17 @@ public class TriggerDetector : MonoBehaviour {
 
     private void Update()
     {
+        if (HasFailureMask || HasSuccessMask)
+        {
+            maskColor.a-= 0.1f;
+            if (HasSuccessMask)
+            {
+                SuccessMask.color = maskColor;
+            }else
+            {
+                FailMask.color = maskColor;
+            }
+        }
 
 
         //checks input, if player hasn't missed note already and if it is on the beat.
@@ -54,7 +73,9 @@ public class TriggerDetector : MonoBehaviour {
 
             Debug.Log("True");
             StartCoroutine(Success());
-            GetComponent<SpriteRenderer>().color = Color.green;
+            HasFailureMask = false;
+            HasSuccessMask = true;
+            maskColor.a = 1;
             Destroy(current.gameObject);
         }
         else if (alreadyMissed == true)
@@ -64,11 +85,12 @@ public class TriggerDetector : MonoBehaviour {
         else if (InputCheck())
         {
             Missed();
+            HasSuccessMask = false;
+            HasFailureMask = true;
+            maskColor.a = 1;
             alreadyMissed = true;
         }
 
-        
-        
     }
 
 
@@ -143,7 +165,6 @@ public class TriggerDetector : MonoBehaviour {
     {
         alreadyMissed = true;
         Debug.Log("missed");
-        GetComponent<SpriteRenderer>().color = Color.red;
         ScoreManager.instance.barEnergy -= 30;
         StartCoroutine(Failure());
     }
@@ -175,6 +196,5 @@ public class TriggerDetector : MonoBehaviour {
         yield return null;
         optionalSuccess = false;
     }
-
 
 }
