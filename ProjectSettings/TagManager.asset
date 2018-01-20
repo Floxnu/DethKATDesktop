@@ -6,6 +6,7 @@ TagManager:
   tags:
   - JumpBox
   - DownBox
+  - Optional
   layers:
   - Default
   - TransparentFX

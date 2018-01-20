@@ -88,6 +88,10 @@ public class OneBeatAttackDetector : MonoBehaviour {
                 Destroy(gameObject);
                     
                 }
+            } else if (playerCheck.optionalSuccess)
+            {
+                ScoreManager.instance.HitSound.Play();
+                ScoreManager.instance.shakeDuration = .1f;
             }
         }
         

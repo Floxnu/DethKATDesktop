@@ -27,6 +27,12 @@ public class TriggerDetector : MonoBehaviour {
 
     public float beatErrorCheck;
 
+    private bool optionaBeat = false;
+
+    private GameObject currentOptional;
+
+    public bool optionalSuccess = false;
+
     //starts the song and beats corutines
     private void Start()
     {
@@ -38,7 +44,12 @@ public class TriggerDetector : MonoBehaviour {
 
 
         //checks input, if player hasn't missed note already and if it is on the beat.
-        if (onBeat && (Input.GetKeyDown(ScoreManager.instance.requiredInput) || Input.GetKeyDown(ScoreManager.instance.optionalInput)) && alreadyMissed == false)
+        if (optionaBeat && CombatInputCheck() && ScoreManager.instance.isFighting)
+        {
+            StartCoroutine(OptionalSuccess());
+            Destroy(currentOptional);
+        }
+        else if (onBeat && (Input.GetKeyDown(ScoreManager.instance.requiredInput) || Input.GetKeyDown(ScoreManager.instance.optionalInput)) && alreadyMissed == false)
         {
 
             Debug.Log("True");
@@ -57,6 +68,7 @@ public class TriggerDetector : MonoBehaviour {
         }
 
         
+        
     }
 
 
@@ -69,6 +81,12 @@ public class TriggerDetector : MonoBehaviour {
         print("onBeat");
         onBeat = true;
         current = other.gameObject;
+        }
+        else if (other.CompareTag("Optional"))
+        {
+            print("optional");
+            optionaBeat = true;
+            currentOptional = other.gameObject;
         }
     }
 
@@ -91,6 +109,10 @@ public class TriggerDetector : MonoBehaviour {
             alreadyMissed = false;
 
             Destroy(other.gameObject, 0.1f);
+        } else if (other.CompareTag("Optional"))
+        {
+            optionaBeat = false;
+            Destroy(other.gameObject, 0.1f);
         }
     }
 
@@ -102,6 +124,19 @@ public class TriggerDetector : MonoBehaviour {
             return true;
         } else { return false; }
     }
+
+    private bool CombatInputCheck()
+    {
+        if(Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 
     //Function for when notes are missed
     private void Missed()
@@ -134,6 +169,12 @@ public class TriggerDetector : MonoBehaviour {
         failed = false;
     }
 
+    IEnumerator OptionalSuccess()
+    {
+        optionalSuccess = true;
+        yield return null;
+        optionalSuccess = false;
+    }
 
 
 }
