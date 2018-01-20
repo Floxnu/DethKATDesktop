@@ -10,7 +10,7 @@ public class OneBeatAttackDetector : MonoBehaviour {
 
     public GameObject inputDisplay;
 
-    private GameObject[] inputsList = {null, null, null};
+    private GameObject[] inputsList = { null, null, null };
 
     private TriggerDetector playerCheck = null;
 
@@ -19,6 +19,8 @@ public class OneBeatAttackDetector : MonoBehaviour {
 
     private int beats;
 
+    public Transform[] SparkPositions;
+    public ParticleSystem SparkParticles;
 
     private void Start()
     {
@@ -81,6 +83,20 @@ public class OneBeatAttackDetector : MonoBehaviour {
             {
                 ScoreManager.instance.HitSound.Play();
                 ScoreManager.instance.shakeDuration = .1f;
+                if(attackKey[beats-1] == KeyCode.J)
+                {
+                    SparkParticles.transform.position = SparkPositions[0].position;
+                    SparkParticles.Emit(10);
+                } else if (attackKey[beats - 1] == KeyCode.K)
+                {
+                    SparkParticles.transform.position = SparkPositions[1].position;
+                    SparkParticles.Emit(10);
+                } else if (attackKey[beats - 1] == KeyCode.L)
+                {
+                    SparkParticles.transform.position = SparkPositions[2].position;
+                    SparkParticles.Emit(10);
+                }
+
                 Destroy(inputsList[beats-1]);
                 --beats;
                 if(beats == 0) {
