@@ -13,6 +13,10 @@ public class WorldMovement : MonoBehaviour {
     public Ease easeType;
     Tweener moveTween;
 
+    public Animator PlayerAnim;
+
+    private bool isLeftRight = true;
+
     public TriggerDetector onBeatCheck;
 
     private bool inputPressed = false;
@@ -40,6 +44,15 @@ public class WorldMovement : MonoBehaviour {
                 else
                 {
                     endPosition = new Vector3(transform.position.x - 3, transform.position.y, 0);
+                    if (isLeftRight)
+                    {
+                        PlayerAnim.SetTrigger("RightStep");
+                        isLeftRight = false;
+                    } else if (!isLeftRight)
+                    {
+                        PlayerAnim.SetTrigger("LeftStep");
+                        isLeftRight = true;
+                    }
                 }
                 moveTween = transform.DOMove(endPosition, .3f);
             }
@@ -60,7 +73,7 @@ public class WorldMovement : MonoBehaviour {
             //Horizontal
             else if(Input.GetKeyDown(KeyCode.K))
             {
-                endPosition = new Vector3(transform.position.x - 5, transform.position.y, 0);
+                endPosition = new Vector3(transform.position.x - 3, transform.position.y, 0);
                 moveTween = transform.DOMove(endPosition, .3f);
                 print("Horizontal");
             }
