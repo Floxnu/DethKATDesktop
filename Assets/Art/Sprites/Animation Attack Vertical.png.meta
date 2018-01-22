@@ -1,17 +1,11 @@
 fileFormatVersion: 2
-guid: b2c765346db9eb24580e3c93a0eec7be
-timeCreated: 1516418224
+guid: 6aa22c75bd439c0408271e5a53dd394c
+timeCreated: 1516586864
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Horizontal attack animation 1_0
-    21300002: Horizontal attack animation 1_1
-    21300004: Horizontal attack animation 1_2
-    21300006: Horizontal attack animation 1_3
-    21300008: Horizontal attack animation 1_4
-    21300010: Horizontal attack animation 1_5
-    21300012: Horizontal attack animation 1_6
-    21300014: Horizontal attack animation 1_7
+    21300000: Animation Attack Vertical_0
+    21300002: Animation Attack Vertical_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -113,43 +107,29 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Horizontal attack animation 1_0
+      name: Animation Attack Vertical_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1716
-        width: 2400
-        height: 1480
+        x: 457
+        y: 2020
+        width: 1921
+        height: 1939
       alignment: 9
-      pivot: {x: 0.5838464, y: 0.60271853}
+      pivot: {x: 0.24211659, y: 0.43291068}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Horizontal attack animation 1_1
+      name: Animation Attack Vertical_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3223
-        width: 2400
-        height: 1480
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Horizontal attack animation 1_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 18
-        width: 2400
-        height: 1480
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 20
+        y: 0
+        width: 1191
+        height: 1565
+      alignment: 9
+      pivot: {x: 0.5201341, y: 0.5065667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

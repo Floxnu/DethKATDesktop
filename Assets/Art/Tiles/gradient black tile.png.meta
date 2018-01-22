@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: ff5307a6355b0fe48b12fc10060677d3
-timeCreated: 1516489716
+guid: 11f0baf649975724c97c091e3d2ef37f
+timeCreated: 1516578954
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Main Character Move(Right Leg)_0
-    21300002: Main Character Move(Right Leg)_1
-    21300004: Main Character Move(Right Leg)_2
-    21300006: Main Character Move(Right Leg)_3
-    21300008: Main Character Move(Right Leg)_4
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -45,13 +40,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 1000
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -108,77 +103,7 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Main Character Move(Right Leg)_0
-      rect:
-        serializedVersion: 2
-        x: 611
-        y: 1586
-        width: 124
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Main Character Move(Right Leg)_1
-      rect:
-        serializedVersion: 2
-        x: 946
-        y: 1594
-        width: 52
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Main Character Move(Right Leg)_2
-      rect:
-        serializedVersion: 2
-        x: 1843
-        y: 1583
-        width: 375
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Main Character Move(Right Leg)_3
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 7
-        width: 1179
-        height: 1574
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Main Character Move(Right Leg)_4
-      rect:
-        serializedVersion: 2
-        x: 1201
-        y: 3
-        width: 1190
-        height: 1555
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
     physicsShape: []
   spritePackingTag: 
