@@ -1,14 +1,11 @@
 fileFormatVersion: 2
-guid: ff5307a6355b0fe48b12fc10060677d3
-timeCreated: 1516581926
+guid: a8a851ad6c904574c93cc4e95c13cfb9
+timeCreated: 1516584555
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Main Character Move(Right Leg)_0
-    21300002: Main Character Move(Right Leg)_1
-    21300004: Main Character Move(Right Leg)_2
-    21300006: Main Character Move(Right Leg)_3
-    21300008: Main Character Move(Right Leg)_4
+    21300000: Horizontal attack animation_0
+    21300002: Horizontal attack animation_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -110,29 +107,29 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main Character Move(Right Leg)_3
+      name: Horizontal attack animation_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 4
-        width: 1179
-        height: 1574
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 1624
+        width: 2388
+        height: 1553
+      alignment: 9
+      pivot: {x: 0.32746843, y: 0.54016846}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Main Character Move(Right Leg)_4
+      name: Horizontal attack animation_1
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 2
-        width: 1179
-        height: 1574
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 27
+        width: 2388
+        height: 1553
+      alignment: 9
+      pivot: {x: 0.30463323, y: 0.51820666}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

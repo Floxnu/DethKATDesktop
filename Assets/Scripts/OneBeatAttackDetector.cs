@@ -22,6 +22,8 @@ public class OneBeatAttackDetector : MonoBehaviour {
     public Transform[] SparkPositions;
     public ParticleSystem SparkParticles;
 
+    public Animator PlayerAnim;
+
     private void Start()
     {
         beats = attackKey.Length;
@@ -72,7 +74,7 @@ public class OneBeatAttackDetector : MonoBehaviour {
             if (playerCheck.failed == true && hasAnimated == false)
             {
                 ScoreManager.instance.HurtSound.Play();
-                transform.Translate(-5, 0, 0);
+                transform.Translate(-3, 0, 0);
                 ScoreManager.instance.shakeDuration = .1f;
                 hasAnimated = true;
                 ScoreManager.instance.requiredInput = KeyCode.D;
@@ -85,14 +87,17 @@ public class OneBeatAttackDetector : MonoBehaviour {
                 ScoreManager.instance.shakeDuration = .1f;
                 if(attackKey[beats-1] == KeyCode.J)
                 {
+                    PlayerAnim.SetTrigger("VAttack");
                     SparkParticles.transform.position = SparkPositions[0].position;
                     SparkParticles.Emit(10);
                 } else if (attackKey[beats - 1] == KeyCode.K)
                 {
+                    PlayerAnim.SetTrigger("HAttack");
                     SparkParticles.transform.position = SparkPositions[1].position;
                     SparkParticles.Emit(10);
                 } else if (attackKey[beats - 1] == KeyCode.L)
                 {
+                    PlayerAnim.SetTrigger("LAttack");
                     SparkParticles.transform.position = SparkPositions[2].position;
                     SparkParticles.Emit(10);
                 }
